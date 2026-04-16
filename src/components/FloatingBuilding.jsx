@@ -59,40 +59,54 @@ const FloatingBuilding = () => {
                 <div className="absolute w-12 h-12 bg-primary/20 rounded-full blur-xl" />
              </div>
 
-             {/* The Pinnacle (Top Tip) */}
+             {/* The Pinnacle (Super Sharp Top Tip) */}
              <div className="absolute inset-0 flex items-center justify-center preserve-3d">
-                {/* Vertical Spire */}
-                <div className="w-1 h-64 bg-gradient-to-t from-primary to-transparent transform -rotate-x-90 translate-y-[-140px]" />
+                {/* Long Main Needle Spire */}
+                <div className="w-[2px] h-[400px] bg-gradient-to-t from-primary via-primary/40 to-transparent transform -rotate-x-90 translate-y-[-280px] shadow-[0_0_15px_rgba(139,92,246,0.6)]" />
                 
-                {/* Pyramid Spike Tip */}
-                <div className="absolute transform -rotate-x-90 translate-y-[-240px] preserve-3d">
+                {/* Pyramid Sharp Tip (Larger and Thinner) */}
+                <div className="absolute transform -rotate-x-90 translate-y-[-480px] preserve-3d">
                   {/* Spike Face 1 */}
                   <div 
-                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/60"
-                    style={{ transform: 'rotateY(0deg) rotateX(15deg) translateZ(5px)' }}
+                    className="absolute w-0 h-0 border-l-[10px] border-r-[10px] border-b-[200px] border-l-transparent border-r-transparent border-b-primary/70"
+                    style={{ transform: 'rotateY(0deg) rotateX(4deg) translateZ(2px)' }}
                   />
                   {/* Spike Face 2 */}
                   <div 
-                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/40"
-                    style={{ transform: 'rotateY(90deg) rotateX(15deg) translateZ(5px)' }}
+                    className="absolute w-0 h-0 border-l-[10px] border-r-[10px] border-b-[200px] border-l-transparent border-r-transparent border-b-primary/50"
+                    style={{ transform: 'rotateY(90deg) rotateX(4deg) translateZ(2px)' }}
                   />
                   {/* Spike Face 3 */}
                   <div 
-                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/60"
-                    style={{ transform: 'rotateY(180deg) rotateX(15deg) translateZ(5px)' }}
+                    className="absolute w-0 h-0 border-l-[10px] border-r-[10px] border-b-[200px] border-l-transparent border-r-transparent border-b-primary/70"
+                    style={{ transform: 'rotateY(180deg) rotateX(4deg) translateZ(2px)' }}
                   />
                   {/* Spike Face 4 */}
                   <div 
-                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/40"
-                    style={{ transform: 'rotateY(270deg) rotateX(15deg) translateZ(5px)' }}
+                    className="absolute w-0 h-0 border-l-[10px] border-r-[10px] border-b-[200px] border-l-transparent border-r-transparent border-b-primary/50"
+                    style={{ transform: 'rotateY(270deg) rotateX(4deg) translateZ(2px)' }}
                   />
                   
-                  {/* Tip Glow */}
+                  {/* Extreme Tip Glow */}
                   <motion.div 
-                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full blur-lg shadow-[0_0_20px_var(--color-primary)]"
+                    animate={{ 
+                      scale: [1, 2, 1], 
+                      opacity: [0.6, 1, 0.6],
+                      boxShadow: [
+                        '0 0 10px var(--color-primary)',
+                        '0 0 30px var(--color-primary), 0 0 60px var(--color-secondary)',
+                        '0 0 10px var(--color-primary)'
+                      ] 
+                    }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute -top-[10px] left-1/2 -translate-x-1/2 w-2 h-2 bg-white rounded-full blur-[2px] z-50"
                   />
+                </div>
+
+                {/* Satellite Disks (Decoration for Spire) */}
+                <div className="absolute transform -rotate-x-90 translate-y-[-350px] preserve-3d">
+                   <div className="w-12 h-12 border border-primary/20 rounded-full" />
+                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 border border-secondary/20 rounded-full" />
                 </div>
              </div>
           </div>
