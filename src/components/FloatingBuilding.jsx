@@ -56,6 +56,43 @@ const FloatingBuilding = () => {
                 <div className="w-24 h-24 border-4 border-primary/40 rounded-full animate-ping" />
                 <div className="absolute w-12 h-12 bg-primary/20 rounded-full blur-xl" />
              </div>
+
+             {/* The Pinnacle (Top Tip) */}
+             <div className="absolute inset-0 flex items-center justify-center preserve-3d">
+                {/* Vertical Spire */}
+                <div className="w-1 h-64 bg-gradient-to-t from-primary to-transparent transform -rotate-x-90 translate-y-[-140px]" />
+                
+                {/* Pyramid Spike Tip */}
+                <div className="absolute transform -rotate-x-90 translate-y-[-240px] preserve-3d">
+                  {/* Spike Face 1 */}
+                  <div 
+                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/60"
+                    style={{ transform: 'rotateY(0deg) rotateX(15deg) translateZ(5px)' }}
+                  />
+                  {/* Spike Face 2 */}
+                  <div 
+                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/40"
+                    style={{ transform: 'rotateY(90deg) rotateX(15deg) translateZ(5px)' }}
+                  />
+                  {/* Spike Face 3 */}
+                  <div 
+                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/60"
+                    style={{ transform: 'rotateY(180deg) rotateX(15deg) translateZ(5px)' }}
+                  />
+                  {/* Spike Face 4 */}
+                  <div 
+                    className="absolute w-0 h-0 border-l-[15px] border-r-[15px] border-b-[60px] border-l-transparent border-r-transparent border-b-primary/40"
+                    style={{ transform: 'rotateY(270deg) rotateX(15deg) translateZ(5px)' }}
+                  />
+                  
+                  {/* Tip Glow */}
+                  <motion.div 
+                    animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="absolute -top-10 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full blur-lg shadow-[0_0_20px_var(--color-primary)]"
+                  />
+                </div>
+             </div>
           </div>
         </div>
 
