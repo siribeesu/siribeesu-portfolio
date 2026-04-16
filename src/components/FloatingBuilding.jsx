@@ -4,65 +4,83 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 const FloatingBuilding = () => {
   const { scrollYProgress } = useScroll();
   
-  // Create a smoother rotate value using spring physics
-  const rawRotate = useTransform(scrollYProgress, [0, 1], [0, 360]);
-  const rotateY = useSpring(rawRotate, { stiffness: 50, damping: 20 });
+  // Stronger rotation for a clearer 3D effect
+  const rawRotate = useTransform(scrollYProgress, [0, 1], [0, 720]);
+  const rotateY = useSpring(rawRotate, { stiffness: 40, damping: 25 });
   
-  // Floating movement
-  const yTranslate = useTransform(scrollYProgress, [0, 1], [-20, 120]);
+  // Floating parallax movement
+  const yTranslate = useTransform(scrollYProgress, [0, 1], [50, -150]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.1, 0.9]);
 
   return (
-    <div className="fixed right-12 top-1/2 -translate-y-1/2 z-0 hidden xl:block pointer-events-none select-none">
+    <div className="fixed right-[-80px] top-1/2 -translate-y-1/2 z-0 hidden 2xl:block pointer-events-none select-none perspective-[1500px]">
       <motion.div
-        style={{ rotateY, y: yTranslate }}
-        className="relative w-28 h-[450px] preserve-3d"
+        style={{ rotateY, y: yTranslate, scale }}
+        className="relative w-64 h-[700px] preserve-3d"
       >
-        {/* Central Core */}
-        <div className="absolute inset-0 bg-bg-card/40 backdrop-blur-md border border-white/10 shadow-2xl preserve-3d">
+        {/* Main Skyscraper Body - Primary Block */}
+        <div className="absolute inset-0 preserve-3d">
           
-          {/* Windows / Floors */}
-          <div className="absolute inset-0 flex flex-col justify-around p-4">
-            {[...Array(12)].map((_, i) => (
-              <div key={i} className="flex justify-between items-center gap-1">
-                <div className={`h-2 w-full rounded-sm ${i % 3 === 0 ? 'bg-primary/40 shadow-[0_0_15px_rgba(139,92,246,0.6)]' : 'bg-primary/10'}`} />
-                <div className={`h-2 w-1/2 rounded-sm ${i % 4 === 0 ? 'bg-secondary/40 shadow-[0_0_15px_rgba(6,182,212,0.6)]' : 'bg-secondary/10'}`} />
+          {/* Front Face */}
+          <div className="absolute inset-0 bg-bg-card/80 backdrop-blur-xl border-l-[3px] border-primary/40 shadow-[inset_0_0_40px_rgba(139,92,246,0.2)] transform translate-z-[120px] flex flex-col p-6 overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50" />
+            {[...Array(20)].map((_, i) => (
+              <div key={i} className="flex gap-2 mb-3">
+                 <div className={`h-4 w-12 rounded-sm ${i % 4 === 0 ? 'bg-primary/50 shadow-[0_0_15px_rgba(139,92,246,0.8)]' : 'bg-white/5'}`} />
+                 <div className="h-4 w-full bg-white/5 rounded-sm" />
+                 <div className={`h-4 w-12 rounded-sm ${i % 3 === 0 ? 'bg-secondary/50 shadow-[0_0_15px_rgba(6,182,212,0.8)]' : 'bg-white/5'}`} />
               </div>
             ))}
           </div>
 
-          {/* Side faces for 3D depth */}
-          {/* Right Face */}
-          <div 
-            className="absolute top-0 bottom-0 -right-4 w-8 bg-black/40 border-y border-r border-white/5"
-            style={{ transform: 'rotateY(90deg) translateZ(4px)' }}
-          />
+          {/* Back Face */}
+          <div className="absolute inset-0 bg-bg-card/90 transform -translate-z-[120px] rotate-y-180 border-r-[3px] border-primary/20" />
+
           {/* Left Face */}
-          <div 
-            className="absolute top-0 bottom-0 -left-4 w-8 bg-black/60 border-y border-l border-white/5"
-            style={{ transform: 'rotateY(-90deg) translateZ(4px)' }}
-          />
-          
-          {/* Top Structure - Tower Tip */}
-          <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-12 h-16 preserve-3d">
-             <div className="absolute bottom-0 w-full h-1 bg-primary/60 blur-sm" />
-             {/* Antenna */}
-             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-32 bg-gradient-to-t from-primary to-transparent" />
-             {/* Glowing Tip */}
-             <motion.div 
-               animate={{ opacity: [0.4, 1, 0.4] }}
-               transition={{ duration: 2, repeat: Infinity }}
-               className="absolute -top-16 left-1/2 -translate-x-1/2 w-3 h-3 bg-primary rounded-full blur-md shadow-[0_0_20px_var(--color-primary)]" 
-             />
+          <div className="absolute inset-y-0 -left-[120px] w-[240px] bg-bg-dark/95 border-x border-white/10 transform rotate-y-90 flex flex-col p-6">
+             <div className="w-full h-full border-l-2 border-primary/20 flex flex-col justify-around">
+                {[...Array(10)].map((_, i) => (
+                  <div key={i} className="h-1 w-full bg-primary/10" />
+                ))}
+             </div>
+          </div>
+
+          {/* Right Face */}
+          <div className="absolute inset-y-0 -right-[120px] w-[240px] bg-bg-dark/95 border-x border-white/10 transform rotate-y-90 translate-x-[240px]">
+             <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-secondary/5 to-transparent" />
+          </div>
+
+          {/* Top Face (Roof) */}
+          <div className="absolute -top-[120px] inset-x-0 h-[240px] bg-bg-card border border-white/20 transform rotate-x-90 translate-y-[120px] shadow-2xl">
+             <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-24 h-24 border-4 border-primary/40 rounded-full animate-ping" />
+                <div className="absolute w-12 h-12 bg-primary/20 rounded-full blur-xl" />
+             </div>
           </div>
         </div>
 
-        {/* Ambient Glow behind the building */}
-        <div className="absolute -inset-10 bg-primary/5 blur-[80px] -z-10 rounded-full" />
+        {/* Secondary Inner Core (Smaller, deeper block) */}
+        <div className="absolute top-20 bottom-20 left-10 right-10 preserve-3d opacity-60">
+           <div className="absolute inset-0 bg-primary/10 border border-primary/40 transform translate-z-[150px]" />
+           <div className="absolute inset-0 bg-secondary/10 border border-secondary/40 transform -translate-z-[150px] rotate-y-180" />
+        </div>
+
+        {/* Floating Halo around it */}
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+          className="absolute -inset-20 border-[2px] border-dashed border-primary/20 rounded-full transform -rotate-x-90 translate-y-[300px]"
+        />
+
+        {/* Massive Glow Source */}
+        <div className="absolute -inset-40 bg-primary/5 blur-[120px] -z-20 rounded-full" />
       </motion.div>
       
-      {/* Label/Decoration */}
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap opacity-20 text-[10px] tracking-[0.4em] uppercase font-bold text-primary">
-        Geometric Monolith // v1.0
+      {/* HUD Info */}
+      <div className="absolute -bottom-20 right-0 text-right opacity-40 font-mono text-xs tracking-widest uppercase text-secondary">
+        <p>Architectural Engine // 0x442</p>
+        <p>Structure Integrity // 100%</p>
+        <p className="text-primary animate-pulse">Scanning System...</p>
       </div>
     </div>
   );
