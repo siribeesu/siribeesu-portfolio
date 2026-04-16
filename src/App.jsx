@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Sparkles from './components/Sparkles';
+import FloatingBuilding from './components/FloatingBuilding';
 import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
@@ -59,6 +60,8 @@ function App() {
         className="fixed w-2 h-2 bg-primary rounded-full pointer-events-none z-[9999] hidden md:block"
         style={{ left: cursorPos.x - 4, top: cursorPos.y - 4 }}
       />
+
+      <FloatingBuilding />
 
       <div className="relative z-10">
         <Navbar />

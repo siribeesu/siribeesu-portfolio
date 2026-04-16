@@ -29,6 +29,10 @@
   .glass-dark {
     @apply bg-black/20 backdrop-blur-2xl border border-white/5;
   }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
 }
 
 @layer components {
