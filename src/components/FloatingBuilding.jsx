@@ -4,13 +4,15 @@ import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 const FloatingBuilding = () => {
   const { scrollYProgress } = useScroll();
   
-  // Stronger rotation for a clearer 3D effect
-  const rawRotate = useTransform(scrollYProgress, [0, 1], [0, 720]);
-  const rotateY = useSpring(rawRotate, { stiffness: 40, damping: 25 });
+  // Reduced rotation for a more subtle, premium feel (from 720 to 180 degrees)
+  const rawRotate = useTransform(scrollYProgress, [0, 1], [0, 180]);
+  
+  // Smoother, "heavier" motion with increased damping
+  const rotateY = useSpring(rawRotate, { stiffness: 25, damping: 30 });
   
   // Floating parallax movement
-  const yTranslate = useTransform(scrollYProgress, [0, 1], [50, -150]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1.1, 0.9]);
+  const yTranslate = useTransform(scrollYProgress, [0, 1], [30, -100]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.05, 0.98]);
 
   return (
     <div className="fixed right-[-80px] top-1/2 -translate-y-1/2 z-0 hidden 2xl:block pointer-events-none select-none perspective-[1500px]">
