@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Sparkles, Star, Award, ShieldCheck, Hash } from 'lucide-react';
 
@@ -8,7 +8,7 @@ const Certifications = () => {
             title: "Scholar of Reliance Foundation",
             issuer: "Reliance Foundation",
             program: "Undergraduate Scholarship Program",
-            year: "2024",
+            year: "2024 - 2028",
             scholarId: "RFSCH240900462787",
             badge: "Reliance Scholar",
             description: "Awarded the highly competitive Reliance Foundation Undergraduate Scholarship recognizing exceptional academic merit, leadership qualities, and dedication to STEM excellence.",
@@ -17,7 +17,7 @@ const Certifications = () => {
                 "Selected through a rigorous pan-India competitive evaluation",
                 "Recognized for outstanding academic performance & leadership"
             ],
-            tags: ["Reliance Foundation", "Scholar ID: RFSCH240900462787", "STEM Excellence", "2024"],
+            tags: ["Reliance Foundation", "Scholar ID: RFSCH240900462787", "STEM Excellence", "2024 - 2028"],
             borderColor: "border-amber-500/30 hover:border-amber-400/70",
             badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
             iconColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
@@ -27,7 +27,7 @@ const Certifications = () => {
             title: "Scholar of Infosys Foundation",
             issuer: "Infosys Foundation",
             program: "STEM Stars Scholarship Program",
-            year: "2024",
+            year: "2024 - 2028",
             scholarId: null,
             badge: "Infosys Scholar",
             description: "Awarded the prestigious Infosys Foundation Scholarship in recognition of academic distinction, engineering aptitude, and dedication to building scalable technology.",
@@ -36,7 +36,7 @@ const Certifications = () => {
                 "Recognized by Infosys Foundation for academic distinction",
                 "Empowered to advance scalable software engineering and research"
             ],
-            tags: ["Infosys Foundation", "STEM Stars", "Academic Distinction", "2024"],
+            tags: ["Infosys Foundation", "STEM Stars", "Academic Distinction", "2024 - 2028"],
             borderColor: "border-primary/30 hover:border-primary/70",
             badgeColor: "text-primary border-primary/30 bg-primary/10",
             iconColor: "text-primary bg-primary/10 border-primary/20",
