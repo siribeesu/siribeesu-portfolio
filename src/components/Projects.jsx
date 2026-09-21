@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, MapPin } from 'lucide-react';
+import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, MapPin, FlaskConical } from 'lucide-react';
 
 const ProjectCard = ({ project, i }) => {
     const x = useMotionValue(0);
@@ -104,6 +104,17 @@ const ProjectCard = ({ project, i }) => {
 const Projects = () => {
     const projects = [
         {
+            title: "Radius250",
+            desc: "Enterprise verification and spatial data platform designed for streamlined candidate credential management, automated validation workflows, and secure administrative processing.",
+            tags: ["React.js", "Node.js", "Express.js", "REST APIs"],
+            github: "https://github.com/RainerTekOrg/RainerCCV",
+            demo: null, 
+            image: null, 
+            gradient: "from-cyan-500/20 to-blue-500/20",
+            icon: <MapPin className="w-6 h-6" />,
+            status: "Enterprise App"
+        },
+        {
             title: "Healthcare Grievance Redressal System",
             desc: "Full-stack healthcare grievance platform supporting anonymous & identified feedback with secure token-based tracking, dedicated staff resolution dashboard, and Firebase real-time sync.",
             tags: ["React.js", "Node.js", "Express.js", "Firebase"],
@@ -124,15 +135,15 @@ const Projects = () => {
             status: "MERN Stack"
         },
         {
-            title: "Radius250",
-            desc: "Location-centric web application enabling radius-based local discovery, interactive geospatial search, real-time mapping, and responsive proximity exploration.",
-            tags: ["React.js", "Node.js", "REST APIs", "Geolocation API"],
-            github: "https://github.com/RainerTekOrg/RainerCCV",
+            title: "Lab Report Management System",
+            desc: "Full-stack medical laboratory and diagnostic reporting system designed for managing patient records, generating formatted diagnostic reports, and streamlining clinical workflows.",
+            tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
+            github: "https://github.com/siribeesu/lab-report",
             demo: null, 
             image: null, 
-            gradient: "from-cyan-500/20 to-blue-500/20",
-            icon: <MapPin className="w-6 h-6" />,
-            status: "Web Application"
+            gradient: "from-emerald-500/20 to-teal-500/20",
+            icon: <FlaskConical className="w-6 h-6" />,
+            status: "Healthcare App"
         },
         {
             title: "SkillMatch AI",
@@ -162,7 +173,7 @@ const Projects = () => {
                     <div className="w-24 h-1.5 bg-primary mx-auto rounded-full" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {projects.map((project, i) => (
                         <ProjectCard key={i} project={project} i={i} />
                     ))}
