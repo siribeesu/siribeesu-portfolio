@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, Activity, ShoppingCart, ExternalLink, Puzzle } from 'lucide-react';
+import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, Layers, FlaskConical } from 'lucide-react';
 
 const ProjectCard = ({ project, i }) => {
     const x = useMotionValue(0);
@@ -75,22 +75,26 @@ const ProjectCard = ({ project, i }) => {
                 </div>
                 
                 <div className="flex items-center gap-6 mt-auto">
-                    <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-text-muted font-bold hover:text-white transition-all text-[10px] uppercase tracking-wider"
-                    >
-                        <Github size={14} /> Source
-                    </a>
-                    <a 
-                        href={project.demo} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-primary font-bold hover:scale-110 transition-all text-[10px] uppercase tracking-wider"
-                    >
-                        <ExternalLink size={14} /> Demo
-                    </a>
+                    {project.github && (
+                        <a 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-text-muted font-bold hover:text-white transition-all text-[10px] uppercase tracking-wider"
+                        >
+                            <Github size={14} /> Source
+                        </a>
+                    )}
+                    {project.demo && (
+                        <a 
+                            href={project.demo} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-primary font-bold hover:scale-110 transition-all text-[10px] uppercase tracking-wider"
+                        >
+                            <ExternalLink size={14} /> Demo
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -99,6 +103,17 @@ const ProjectCard = ({ project, i }) => {
 
 const Projects = () => {
     const projects = [
+        {
+            title: "Radius250",
+            desc: "Enterprise operations and field-service management platform enabling businesses to manage clients, multi-site operations, equipment, work orders, quotations, invoices, reports, and day-to-day operations with real-time tracking.",
+            tags: ["Next.js", "FastAPI (Python)", "WebSockets", "MongoDB", "Redis", "Multi-Tenancy"],
+            github: "https://github.com/RainerTekOrg/RainerCCV",
+            demo: null, 
+            image: "/radius250.png", 
+            gradient: "from-blue-500/20 to-cyan-500/20",
+            icon: <Layers className="w-6 h-6" />,
+            status: "Enterprise Platform"
+        },
         {
             title: "Healthcare Grievance Redressal System",
             desc: "Full-stack healthcare grievance platform supporting anonymous & identified feedback with secure token-based tracking, dedicated staff resolution dashboard, and Firebase real-time sync.",
@@ -120,13 +135,24 @@ const Projects = () => {
             status: "MERN Stack"
         },
         {
+            title: "Lab Report Management System",
+            desc: "Full-stack medical laboratory and diagnostic reporting system designed for managing patient records, generating formatted diagnostic reports, and streamlining clinical workflows.",
+            tags: ["React.js", "Node.js", "Express.js", "MongoDB"],
+            github: "https://github.com/siribeesu/lab-report",
+            demo: null, 
+            image: null, 
+            gradient: "from-emerald-500/20 to-teal-500/20",
+            icon: <FlaskConical className="w-6 h-6" />,
+            status: "Healthcare App"
+        },
+        {
             title: "SkillMatch AI",
             desc: "Intelligent Chrome Extension that analyzes job descriptions in real-time to match vacancies with candidate skills using NLP and automated parsing.",
             tags: ["Manifest V3", "JavaScript", "NLP", "OpenAI"],
             github: "https://github.com/siribeesu/skillmatch-ai",
             demo: "https://github.com/siribeesu/skillmatch-ai", 
             image: null, 
-            gradient: "from-blue-500/20 to-indigo-500/20",
+            gradient: "from-purple-500/20 to-indigo-500/20",
             icon: <Puzzle className="w-6 h-6" />,
             status: "Chrome Extension"
         }
@@ -147,7 +173,7 @@ const Projects = () => {
                     <div className="w-24 h-1.5 bg-primary mx-auto rounded-full" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {projects.map((project, i) => (
                         <ProjectCard key={i} project={project} i={i} />
                     ))}
