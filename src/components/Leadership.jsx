@@ -1,6 +1,6 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, FileText, Code2, Sparkles, CheckCircle2, Trophy } from 'lucide-react';
+import { Users, FileText, Code2, CheckCircle2 } from 'lucide-react';
 
 const Leadership = () => {
     const roles = [
@@ -45,20 +45,6 @@ const Leadership = () => {
             skills: ["Developer Community", "Problem Solving", "Collaboration", "Git & GitHub"],
             gradient: "from-emerald-500/20 to-cyan-500/20",
             icon: <Code2 className="w-6 h-6 text-emerald-400" />
-        },
-        {
-            role: "Hackathon Competitor & Builder",
-            organization: "Smart India Hackathon (SIH) & CSI Hackathon",
-            badge: "Hackathons",
-            description: "Participating in premier national hackathons, architecting full-stack solutions for real-world problem statements under rapid team sprint settings.",
-            highlights: [
-                "Contributed to problem analysis, system architecture, and frontend-backend integration",
-                "Collaborated on real-world problem statements in team settings",
-                "Built and deployed end-to-end full stack prototypes"
-            ],
-            skills: ["Smart India Hackathon", "CSI Hackathon", "System Architecture", "Prototyping"],
-            gradient: "from-cyan-500/20 to-blue-500/20",
-            icon: <Trophy className="w-6 h-6 text-cyan-400" />
         }
     ];
 
@@ -75,7 +61,7 @@ const Leadership = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block"
                     >
-                        Leadership & Hackathons
+                        Leadership & Community
                     </motion.h2>
                     <motion.div 
                         initial={{ width: 0 }}
@@ -84,11 +70,11 @@ const Leadership = () => {
                         className="h-1.5 bg-primary mx-auto rounded-full mb-4"
                     />
                     <p className="text-text-muted max-w-xl mx-auto text-sm md:text-base">
-                        Active contributions to technical communities, entrepreneurship cells, and national hackathons.
+                        Active contributions to technical communities, entrepreneurship cells, and student leadership.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                     {roles.map((item, index) => (
                         <motion.div
                             key={index}
@@ -97,7 +83,7 @@ const Leadership = () => {
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -8 }}
-                            className="glass p-7 rounded-3xl border border-white/5 hover:border-primary/40 transition-all flex flex-col justify-between group relative overflow-hidden"
+                            className="glass p-8 rounded-3xl border border-white/5 hover:border-primary/40 transition-all flex flex-col justify-between group relative overflow-hidden"
                         >
                             {/* Ambient Top Glow */}
                             <div className={`absolute top-0 right-0 w-36 h-36 bg-gradient-to-br ${item.gradient} rounded-full blur-2xl group-hover:scale-125 transition-all duration-500`} />
