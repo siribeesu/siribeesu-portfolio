@@ -75,22 +75,26 @@ const ProjectCard = ({ project, i }) => {
                 </div>
                 
                 <div className="flex items-center gap-6 mt-auto">
-                    <a 
-                        href={project.github} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-text-muted font-bold hover:text-white transition-all text-[10px] uppercase tracking-wider"
-                    >
-                        <Github size={14} /> Source
-                    </a>
-                    <a 
-                        href={project.demo} 
-                        target="_blank" 
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-2 text-primary font-bold hover:scale-110 transition-all text-[10px] uppercase tracking-wider"
-                    >
-                        <ExternalLink size={14} /> Demo
-                    </a>
+                    {project.github && (
+                        <a 
+                            href={project.github} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-text-muted font-bold hover:text-white transition-all text-[10px] uppercase tracking-wider"
+                        >
+                            <Github size={14} /> Source
+                        </a>
+                    )}
+                    {project.demo && (
+                        <a 
+                            href={project.demo} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-2 text-primary font-bold hover:scale-110 transition-all text-[10px] uppercase tracking-wider"
+                        >
+                            <ExternalLink size={14} /> Demo
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>
@@ -122,9 +126,9 @@ const Projects = () => {
         {
             title: "Radius250",
             desc: "Location-centric web application enabling radius-based local discovery, interactive geospatial search, real-time mapping, and responsive proximity exploration.",
-            tags: ["React.js", "Node.js", "FastAPI", "Geolocation API"],
-            github: "https://github.com/siribeesu/radius250",
-            demo: "https://github.com/siribeesu/radius250", 
+            tags: ["React.js", "Node.js", "REST APIs", "Geolocation API"],
+            github: "https://github.com/RainerTekOrg/RainerCCV",
+            demo: null, 
             image: null, 
             gradient: "from-cyan-500/20 to-blue-500/20",
             icon: <MapPin className="w-6 h-6" />,
