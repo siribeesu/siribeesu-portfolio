@@ -49,7 +49,7 @@ const Hero = () => {
                         className="glass px-6 py-2 rounded-full text-primary font-bold uppercase tracking-[3px] mb-8 text-xs md:text-sm flex items-center gap-2"
                     >
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                        Full Stack Developer • Infosys Foundation Scholar
+                        Full Stack Developer • Reliance & Infosys Foundation Scholar
                     </motion.div>
 
                     <motion.h1 

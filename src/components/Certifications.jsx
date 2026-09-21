@@ -1,12 +1,53 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
-import { Award, CheckCircle2, Sparkles, Star, GraduationCap } from 'lucide-react';
+import { CheckCircle2, Sparkles, Star, Award, ShieldCheck, Hash } from 'lucide-react';
 
 const Certifications = () => {
+    const scholarships = [
+        {
+            title: "Scholar of Reliance Foundation",
+            issuer: "Reliance Foundation",
+            program: "Undergraduate Scholarship Program",
+            year: "2024",
+            scholarId: "RFSCH240900462787",
+            badge: "Reliance Scholar",
+            description: "Awarded the highly competitive Reliance Foundation Undergraduate Scholarship recognizing exceptional academic merit, leadership qualities, and dedication to STEM excellence.",
+            points: [
+                "Scholar ID: RFSCH240900462787 (Verified Credential)",
+                "Selected through a rigorous pan-India competitive evaluation",
+                "Recognized for outstanding academic performance & leadership"
+            ],
+            tags: ["Reliance Foundation", "Scholar ID: RFSCH240900462787", "STEM Excellence", "2024"],
+            borderColor: "border-amber-500/30 hover:border-amber-400/70",
+            badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
+            iconColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
+            glowColor: "from-amber-500/20 to-orange-500/10"
+        },
+        {
+            title: "Scholar of Infosys Foundation",
+            issuer: "Infosys Foundation",
+            program: "STEM Stars Scholarship Program",
+            year: "2024",
+            scholarId: null,
+            badge: "Infosys Scholar",
+            description: "Awarded the prestigious Infosys Foundation Scholarship in recognition of academic distinction, engineering aptitude, and dedication to building scalable technology.",
+            points: [
+                "Awarded for national STEM excellence and engineering merit",
+                "Recognized by Infosys Foundation for academic distinction",
+                "Empowered to advance scalable software engineering and research"
+            ],
+            tags: ["Infosys Foundation", "STEM Stars", "Academic Distinction", "2024"],
+            borderColor: "border-primary/30 hover:border-primary/70",
+            badgeColor: "text-primary border-primary/30 bg-primary/10",
+            iconColor: "text-primary bg-primary/10 border-primary/20",
+            glowColor: "from-primary/20 to-secondary/10"
+        }
+    ];
+
     return (
         <section id="certifications" className="py-24 relative overflow-hidden">
             {/* Ambient Background Glow */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[140px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-amber-500/5 rounded-full blur-[140px] -z-10" />
 
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
@@ -25,69 +66,80 @@ const Certifications = () => {
                         className="h-1.5 bg-gradient-to-r from-amber-400 to-primary mx-auto rounded-full mb-4"
                     />
                     <p className="text-text-muted max-w-xl mx-auto text-sm md:text-base">
-                        Prestigious foundation recognition and academic excellence awards.
+                        Prestigious foundation recognition and national scholarships for STEM excellence.
                     </p>
                 </div>
 
-                <div className="max-w-3xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-                        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                        whileHover={{ y: -6 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
-                        className="glass p-8 md:p-12 rounded-3xl border border-amber-500/30 hover:border-amber-400/60 transition-all relative overflow-hidden group shadow-[0_0_40px_rgba(245,158,11,0.1)]"
-                    >
-                        {/* Background Spotlight Glow */}
-                        <div className="absolute -right-16 -top-16 w-60 h-60 bg-gradient-to-br from-amber-500/25 to-primary/20 rounded-full blur-3xl group-hover:scale-125 transition-all duration-500" />
-                        
-                        <div className="relative z-10">
-                            <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                                <div className="w-16 h-16 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 group-hover:scale-110 transition-transform duration-300">
-                                    <Sparkles className="w-8 h-8" />
-                                </div>
-                                <span className="px-4 py-1.5 glass rounded-full text-xs font-bold uppercase tracking-wider text-amber-400 border border-amber-500/30 flex items-center gap-1.5">
-                                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" /> Prestigious Scholar
-                                </span>
-                            </div>
-
-                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:text-amber-400 transition-colors">
-                                Scholar of Infosys Foundation
-                            </h3>
-
-                            <h4 className="text-lg font-semibold text-secondary mb-4">
-                                Infosys Foundation • STEM Stars Program
-                            </h4>
-
-                            <p className="text-sm md:text-base text-text-muted leading-relaxed mb-8">
-                                Awarded the prestigious Infosys Foundation Scholarship in recognition of outstanding academic performance, leadership, and high potential in Computer Science & Engineering.
-                            </p>
-
-                            <div className="space-y-3 mb-8">
-                                {[
-                                    "Selected for national STEM excellence and engineering merit",
-                                    "Recognized by Infosys Foundation for academic distinction",
-                                    "Empowered to advance scalable software engineering and research"
-                                ].map((point, idx) => (
-                                    <div key={idx} className="flex items-center gap-3 text-sm text-text-muted">
-                                        <CheckCircle2 className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                                        <span>{point}</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    {scholarships.map((item, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            whileHover={{ y: -6 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.15 }}
+                            className={`glass p-8 md:p-10 rounded-3xl border ${item.borderColor} transition-all relative overflow-hidden group flex flex-col justify-between shadow-[0_0_30px_rgba(0,0,0,0.2)]`}
+                        >
+                            {/* Background Spotlight Glow */}
+                            <div className={`absolute -right-16 -top-16 w-60 h-60 bg-gradient-to-br ${item.glowColor} rounded-full blur-3xl group-hover:scale-125 transition-all duration-500`} />
+                            
+                            <div className="relative z-10">
+                                <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                                    <div className={`w-14 h-14 rounded-2xl ${item.iconColor} border flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                                        <Sparkles className="w-7 h-7" />
                                     </div>
-                                ))}
+                                    <div className="flex items-center gap-2">
+                                        <span className={`px-3.5 py-1 glass rounded-full text-xs font-bold uppercase tracking-wider ${item.badgeColor} border flex items-center gap-1.5`}>
+                                            <Star className="w-3.5 h-3.5 fill-current" /> {item.badge}
+                                        </span>
+                                        <span className="px-3 py-1 glass rounded-full text-xs font-bold text-text-muted border border-white/10">
+                                            {item.year}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-amber-400 transition-colors">
+                                    {item.title}
+                                </h3>
+
+                                <h4 className="text-sm font-semibold text-secondary mb-4">
+                                    {item.issuer} • {item.program}
+                                </h4>
+
+                                {item.scholarId && (
+                                    <div className="mb-5 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-amber-500/30 rounded-xl text-xs text-amber-300 font-mono font-semibold">
+                                        <ShieldCheck className="w-4 h-4 text-amber-400" />
+                                        <span>Scholar ID: <strong>{item.scholarId}</strong></span>
+                                    </div>
+                                )}
+
+                                <p className="text-xs md:text-sm text-text-muted leading-relaxed mb-6">
+                                    {item.description}
+                                </p>
+
+                                <div className="space-y-2.5 mb-8">
+                                    {item.points.map((point, idx) => (
+                                        <div key={idx} className="flex items-start gap-2.5 text-xs text-text-muted">
+                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                            <span>{point}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
 
-                            <div className="flex flex-wrap gap-2 pt-6 border-t border-white/5">
-                                {["Infosys Foundation", "STEM Scholar", "Academic Excellence", "Computer Science"].map((tag, tIdx) => (
+                            <div className="relative z-10 flex flex-wrap gap-2 pt-6 border-t border-white/5">
+                                {item.tags.map((tag, tIdx) => (
                                     <span 
                                         key={tIdx}
-                                        className="px-3 py-1 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold text-text-muted"
+                                        className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] font-semibold text-text-muted"
                                     >
                                         {tag}
                                     </span>
                                 ))}
                             </div>
-                        </div>
-                    </motion.div>
+                        </motion.div>
+                    ))}
                 </div>
             </div>
         </section>
