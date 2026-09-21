@@ -14,7 +14,6 @@ const Leadership = () => {
                 "Managing event logistics and speaker coordination",
                 "Engaging with student developers and cloud enthusiasts"
             ],
-            skills: ["Event Management", "AWS Community", "Team Leadership", "Operations"],
             gradient: "from-amber-500/20 to-yellow-500/20",
             icon: <Users className="w-6 h-6 text-amber-400" />
         },
@@ -28,7 +27,6 @@ const Leadership = () => {
                 "Maintaining structured archival records for E-Cell initiatives",
                 "Collaborating with marketing and design teams on outreach content"
             ],
-            skills: ["Documentation", "Technical Writing", "Content Strategy", "E-Cell Operations"],
             gradient: "from-purple-500/20 to-indigo-500/20",
             icon: <FileText className="w-6 h-6 text-purple-400" />
         },
@@ -42,7 +40,6 @@ const Leadership = () => {
                 "Assisting junior developers with modern web fundamentals",
                 "Participating in collaborative team projects and code reviews"
             ],
-            skills: ["Developer Community", "Problem Solving", "Collaboration", "Git & GitHub"],
             gradient: "from-emerald-500/20 to-cyan-500/20",
             icon: <Code2 className="w-6 h-6 text-emerald-400" />
         }
@@ -110,25 +107,12 @@ const Leadership = () => {
                                     {item.description}
                                 </p>
 
-                                <div className="space-y-2 mb-6">
+                                <div className="space-y-2">
                                     {item.highlights.map((point, pIdx) => (
                                         <div key={pIdx} className="flex items-start gap-2 text-[11px] text-text-muted">
                                             <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
                                             <span>{point}</span>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="relative z-10 pt-4 border-t border-white/5">
-                                <div className="flex flex-wrap gap-1.5">
-                                    {item.skills.map((skill, sIdx) => (
-                                        <span 
-                                            key={sIdx}
-                                            className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-text-muted group-hover:border-primary/20 transition-all"
-                                        >
-                                            {skill}
-                                        </span>
                                     ))}
                                 </div>
                             </div>
