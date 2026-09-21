@@ -17,11 +17,11 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Home', href: '#home' },
         { name: 'Experience', href: '#experience' },
-        { name: 'Leadership', href: '#leadership' },
         { name: 'Education', href: '#education' },
         { name: 'Skills', href: '#skills' },
         { name: 'Projects', href: '#projects' },
         { name: 'Honors', href: '#certifications' },
+        { name: 'Leadership', href: '#leadership' },
         { name: 'Contact', href: '#contact' },
     ];
 

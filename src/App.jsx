@@ -70,11 +70,11 @@ function App() {
         <Navbar />
         <Hero />
         <Experience />
-        <Leadership />
         <Education />
         <Skills />
         <Projects />
         <Certifications />
+        <Leadership />
         <Contact />
         <Footer />
       </div>
