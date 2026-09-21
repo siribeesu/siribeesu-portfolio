@@ -109,7 +109,7 @@ const Projects = () => {
             tags: ["Next.js", "FastAPI (Python)", "WebSockets", "MongoDB", "Redis", "Multi-Tenancy"],
             github: "https://github.com/RainerTekOrg/RainerCCV",
             demo: null, 
-            image: null, 
+            image: "/radius250.png", 
             gradient: "from-blue-500/20 to-cyan-500/20",
             icon: <Layers className="w-6 h-6" />,
             status: "Enterprise Platform"
