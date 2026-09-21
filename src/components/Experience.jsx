@@ -21,11 +21,11 @@ const Experience = () => {
             role: "Full Stack Developer Intern",
             company: "Startups India",
             type: "Internship",
-            description: "Developed and scaled full-stack web features, optimized frontend performance, and designed RESTful backend API integrations.",
+            description: "Contributed to building and scaling the Startups India website, developing responsive web features, and integrating RESTful backend APIs.",
             highlights: [
-                "Full-stack feature engineering & REST API integrations",
-                "Frontend state management and responsive UI components",
-                "Performance optimization and cross-platform compatibility"
+                "Worked on the Startups India website features and user interface",
+                "Engineered responsive components and optimized web performance",
+                "Integrated RESTful backend APIs and managed client-side state"
             ],
             gradient: "from-purple-500/20 to-pink-500/20",
             icon: <Building2 className="w-6 h-6 text-secondary" />
