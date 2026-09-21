@@ -13,7 +13,7 @@ const Certifications = () => {
             badge: "Reliance Scholar",
             description: "Awarded the highly competitive Reliance Foundation Undergraduate Scholarship recognizing exceptional academic merit, leadership qualities, and dedication to STEM excellence.",
             points: [
-                "Scholar ID: RFSCH240900462787 (Verified Credential)",
+                "Scholar ID: RFSCH240900462787",
                 "Selected through a rigorous pan-India competitive evaluation",
                 "Recognized for outstanding academic performance & leadership"
             ],
