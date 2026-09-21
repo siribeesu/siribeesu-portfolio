@@ -100,9 +100,9 @@ const ProjectCard = ({ project, i }) => {
 const Projects = () => {
     const projects = [
         {
-            title: "Healthcare Grievance System",
-            desc: "A mission-critical platform for anonymous & identified patient feedback using real-time sync.",
-            tags: ["React", "Node.js", "Firebase"],
+            title: "Healthcare Grievance Redressal System",
+            desc: "Full-stack healthcare grievance platform supporting anonymous & identified feedback with secure token-based tracking, dedicated staff resolution dashboard, and Firebase real-time sync.",
+            tags: ["React.js", "Node.js", "Express.js", "Firebase"],
             github: "https://github.com/siribeesu/voiceofhope",
             demo: "https://voiceofhope-n8al.vercel.app/", 
             image: "/Screenshot 2026-04-14 205937.png",
@@ -110,9 +110,9 @@ const Projects = () => {
             status: "Full Stack"
         },
         {
-            title: "DealDrop E-Commerce",
-            desc: "High-performance MERN marketplace with secure authentication and dynamic cart logic.",
-            tags: ["MongoDB", "Express", "React", "Node"],
+            title: "E-Commerce Website (MERN Stack)",
+            desc: "High-performance MERN marketplace featuring dynamic product catalog, interactive cart management, secure user authentication, and order processing with a responsive UI.",
+            tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
             github: "https://github.com/siribeesu/dealdrop",
             demo: "https://dealdrop-lj35.onrender.com/", 
             image: "/Screenshot 2026-04-14 210143.png",
@@ -121,8 +121,8 @@ const Projects = () => {
         },
         {
             title: "SkillMatch AI",
-            desc: "A powerful Chrome Extension that analyzes job boards in real-time to match vacancies with your skills using NLP.",
-            tags: ["Manifest V3", "Javascript", "NLP", "OpenAI"],
+            desc: "Intelligent Chrome Extension that analyzes job descriptions in real-time to match vacancies with candidate skills using NLP and automated parsing.",
+            tags: ["Manifest V3", "JavaScript", "NLP", "OpenAI"],
             github: "https://github.com/siribeesu/skillmatch-ai",
             demo: "https://github.com/siribeesu/skillmatch-ai", 
             image: null, 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Send, Phone } from 'lucide-react';
 
 const Contact = () => {
     const contactData = [
@@ -12,9 +12,16 @@ const Contact = () => {
             color: "bg-blue-500/10 text-blue-500"
         },
         {
+            icon: <Phone className="w-6 h-6" />,
+            label: "Phone",
+            value: "+91 9392648263",
+            href: "tel:+919392648263",
+            color: "bg-emerald-500/10 text-emerald-500"
+        },
+        {
             icon: <MapPin className="w-6 h-6" />,
             label: "Location",
-            value: "Hyderabad, Telangana",
+            value: "West Marredpally, Hyderabad – 500026",
             color: "bg-orange-500/10 text-orange-500"
         }
     ];
