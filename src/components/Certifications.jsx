@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Sparkles, Star, Award, ShieldCheck, Trophy } from 'lucide-react';
+import { Sparkles, Star, Award, ShieldCheck } from 'lucide-react';
 
 const Certifications = () => {
     const achievements = [
@@ -29,23 +29,6 @@ const Certifications = () => {
             iconColor: "text-primary bg-primary/10 border-primary/20",
             glowColor: "from-primary/20 to-secondary/10",
             icon: <Award className="w-7 h-7" />
-        },
-        {
-            title: "Academic Top Ranker & Topper",
-            issuer: "Board of Intermediate & High School",
-            program: "State & Institutional Distinction",
-            year: "2021 - 2024",
-            scholarId: null,
-            badge: "Academic Topper",
-            points: [
-                "Secured State 4th Rank in Class 11 and was College Topper",
-                "School Topper in Class 10 (CGPA: 9.8 / 10.0)"
-            ],
-            borderColor: "border-cyan-500/30 hover:border-cyan-400/70",
-            badgeColor: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
-            iconColor: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
-            glowColor: "from-cyan-500/20 to-blue-500/10",
-            icon: <Trophy className="w-7 h-7" />
         }
     ];
 
@@ -71,11 +54,11 @@ const Certifications = () => {
                         className="h-1.5 bg-gradient-to-r from-amber-400 to-primary mx-auto rounded-full mb-4"
                     />
                     <p className="text-text-muted max-w-xl mx-auto text-sm md:text-base">
-                        Prestigious foundation recognition, scholarships, and top academic ranks.
+                        Prestigious foundation recognition and undergraduate STEM scholarships.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                     {achievements.map((item, index) => (
                         <motion.div
                             key={index}
@@ -113,26 +96,9 @@ const Certifications = () => {
                                 </h4>
 
                                 {item.scholarId && (
-                                    <div className="mb-5 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-amber-500/30 rounded-xl text-xs text-amber-300 font-mono font-semibold">
+                                    <div className="mt-2 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-amber-500/30 rounded-xl text-xs text-amber-300 font-mono font-semibold">
                                         <ShieldCheck className="w-4 h-4 text-amber-400" />
                                         <span>Scholar ID: <strong>{item.scholarId}</strong></span>
-                                    </div>
-                                )}
-
-                                {item.description && (
-                                    <p className="text-xs md:text-sm text-text-muted leading-relaxed mb-6">
-                                        {item.description}
-                                    </p>
-                                )}
-
-                                {item.points && item.points.length > 0 && (
-                                    <div className="space-y-2.5">
-                                        {item.points.map((point, idx) => (
-                                            <div key={idx} className="flex items-start gap-2.5 text-xs text-text-muted">
-                                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                                                <span>{point}</span>
-                                            </div>
-                                        ))}
                                     </div>
                                 )}
                             </div>
