@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, MapPin, FlaskConical } from 'lucide-react';
+import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, Layers, FlaskConical } from 'lucide-react';
 
 const ProjectCard = ({ project, i }) => {
     const x = useMotionValue(0);
@@ -105,14 +105,14 @@ const Projects = () => {
     const projects = [
         {
             title: "Radius250",
-            desc: "Enterprise verification and spatial data platform designed for streamlined candidate credential management, automated validation workflows, and secure administrative processing.",
-            tags: ["React.js", "Node.js", "Express.js", "REST APIs"],
+            desc: "Enterprise operations and field-service management platform enabling businesses to manage clients, multi-site operations, equipment, work orders, quotations, invoices, reports, and day-to-day operations with real-time tracking.",
+            tags: ["Next.js", "FastAPI (Python)", "WebSockets", "MongoDB", "Redis", "Multi-Tenancy"],
             github: "https://github.com/RainerTekOrg/RainerCCV",
             demo: null, 
             image: null, 
-            gradient: "from-cyan-500/20 to-blue-500/20",
-            icon: <MapPin className="w-6 h-6" />,
-            status: "Enterprise App"
+            gradient: "from-blue-500/20 to-cyan-500/20",
+            icon: <Layers className="w-6 h-6" />,
+            status: "Enterprise Platform"
         },
         {
             title: "Healthcare Grievance Redressal System",
