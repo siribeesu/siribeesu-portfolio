@@ -17,7 +17,6 @@ const Certifications = () => {
                 "Selected through a rigorous pan-India competitive evaluation",
                 "Recognized for outstanding academic performance & leadership"
             ],
-            tags: ["Reliance Foundation", "Scholar ID: RFSCH240900462787", "STEM Excellence", "2024 - 2028"],
             borderColor: "border-amber-500/30 hover:border-amber-400/70",
             badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
             iconColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
@@ -36,7 +35,6 @@ const Certifications = () => {
                 "Recognized by Infosys Foundation for academic distinction",
                 "Empowered to advance scalable software engineering and research"
             ],
-            tags: ["Infosys Foundation", "STEM Stars", "Academic Distinction", "2024 - 2028"],
             borderColor: "border-primary/30 hover:border-primary/70",
             badgeColor: "text-primary border-primary/30 bg-primary/10",
             iconColor: "text-primary bg-primary/10 border-primary/20",
@@ -118,7 +116,7 @@ const Certifications = () => {
                                     {item.description}
                                 </p>
 
-                                <div className="space-y-2.5 mb-8">
+                                <div className="space-y-2.5">
                                     {item.points.map((point, idx) => (
                                         <div key={idx} className="flex items-start gap-2.5 text-xs text-text-muted">
                                             <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
@@ -126,17 +124,6 @@ const Certifications = () => {
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-
-                            <div className="relative z-10 flex flex-wrap gap-2 pt-6 border-t border-white/5">
-                                {item.tags.map((tag, tIdx) => (
-                                    <span 
-                                        key={tIdx}
-                                        className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-lg text-[11px] font-semibold text-text-muted"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
                             </div>
                         </motion.div>
                     ))}
