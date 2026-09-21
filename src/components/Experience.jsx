@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase, Building2, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Briefcase, Building2, Code2, CheckCircle2 } from 'lucide-react';
 
 const Experience = () => {
     const experiences = [
@@ -14,7 +14,6 @@ const Experience = () => {
                 "Engineered responsive Next.js frontend interfaces",
                 "Containerized applications using Docker and integrated MCP workflows"
             ],
-            skills: ["Next.js", "FastAPI (Python)", "WebSockets", "Docker", "MCP"],
             gradient: "from-blue-500/20 to-cyan-500/20",
             icon: <Briefcase className="w-6 h-6 text-cyan-400" />
         },
@@ -22,13 +21,12 @@ const Experience = () => {
             role: "Full Stack Developer Intern",
             company: "Startups India",
             type: "Internship",
-            description: "Developed and scaled full-stack web features, optimized frontend performance, and designed RESTful backend API integrations.",
+            description: "Contributed to building and scaling the Startups India website, developing responsive web features, and integrating RESTful backend APIs.",
             highlights: [
-                "Full-stack feature engineering & REST API integrations",
-                "Frontend state management and responsive UI components",
-                "Performance optimization and cross-platform compatibility"
+                "Worked on the Startups India website features and user interface",
+                "Engineered responsive components and optimized web performance",
+                "Integrated RESTful backend APIs and managed client-side state"
             ],
-            skills: ["React.js", "Node.js", "REST APIs", "Express.js", "MongoDB"],
             gradient: "from-purple-500/20 to-pink-500/20",
             icon: <Building2 className="w-6 h-6 text-secondary" />
         },
@@ -42,7 +40,6 @@ const Experience = () => {
                 "Connected MongoDB schemas with Express backend services",
                 "Collaborated in sprint planning and code reviews"
             ],
-            skills: ["Full Stack Dev", "JavaScript", "React.js", "MongoDB", "Express.js"],
             gradient: "from-emerald-500/20 to-teal-500/20",
             icon: <Code2 className="w-6 h-6 text-emerald-400" />
         }
@@ -111,25 +108,12 @@ const Experience = () => {
                                     {exp.description}
                                 </p>
 
-                                <div className="space-y-2 mb-6">
+                                <div className="space-y-2">
                                     {exp.highlights.map((point, pIdx) => (
                                         <div key={pIdx} className="flex items-start gap-2 text-xs text-text-muted">
                                             <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
                                             <span>{point}</span>
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="relative z-10 pt-4 border-t border-white/5">
-                                <div className="flex flex-wrap gap-2">
-                                    {exp.skills.map((skill, sIdx) => (
-                                        <span 
-                                            key={sIdx}
-                                            className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-text-muted group-hover:border-primary/20 transition-all"
-                                        >
-                                            {skill}
-                                        </span>
                                     ))}
                                 </div>
                             </div>

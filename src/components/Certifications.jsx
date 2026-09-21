@@ -22,7 +22,7 @@ const Certifications = () => {
             issuer: "Infosys Foundation",
             program: "STEM Stars Scholarship Program",
             year: "2024 - 2028",
-            scholarId: null,
+            scholarId: "10603043B4S24553",
             badge: "Infosys Scholar",
             borderColor: "border-primary/30 hover:border-primary/70",
             badgeColor: "text-primary border-primary/30 bg-primary/10",
@@ -96,9 +96,9 @@ const Certifications = () => {
                                 </h4>
 
                                 {item.scholarId && (
-                                    <div className="mt-2 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-amber-500/30 rounded-xl text-xs text-amber-300 font-mono font-semibold">
-                                        <ShieldCheck className="w-4 h-4 text-amber-400" />
-                                        <span>Scholar ID: <strong>{item.scholarId}</strong></span>
+                                    <div className="mt-2 inline-flex items-center gap-2 px-3.5 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs text-white/90 font-mono font-semibold">
+                                        <ShieldCheck className={`w-4 h-4 ${item.badgeColor.split(' ')[0]}`} />
+                                        <span>Scholar ID: <strong className={item.badgeColor.split(' ')[0]}>{item.scholarId}</strong></span>
                                     </div>
                                 )}
                             </div>

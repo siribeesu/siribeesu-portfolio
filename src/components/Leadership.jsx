@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, FileText, Code2, CheckCircle2 } from 'lucide-react';
+import { Users, FileText, Code2 } from 'lucide-react';
 
 const Leadership = () => {
     const roles = [
@@ -8,13 +8,7 @@ const Leadership = () => {
             role: "Event Management Team",
             organization: "AWS Student Community / AWS Cloud Club",
             badge: "Event & Operations",
-            description: "Planning and organizing cloud workshops, hackathons, speaker sessions, and student engagements for the AWS community.",
-            highlights: [
-                "Coordinating technical workshops and developer events",
-                "Managing event logistics and speaker coordination",
-                "Engaging with student developers and cloud enthusiasts"
-            ],
-            skills: ["Event Management", "AWS Community", "Team Leadership", "Operations"],
+            description: "Organizing cloud workshops, tech speaker sessions, and developer community engagements.",
             gradient: "from-amber-500/20 to-yellow-500/20",
             icon: <Users className="w-6 h-6 text-amber-400" />
         },
@@ -22,13 +16,7 @@ const Leadership = () => {
             role: "Documentation Team",
             organization: "E-Cell (Entrepreneurship Cell)",
             badge: "Content & Strategy",
-            description: "Leading documentation, event reports, official briefs, and publication materials for entrepreneurship summits and startup challenges.",
-            highlights: [
-                "Drafting official event reports and technical summaries",
-                "Maintaining structured archival records for E-Cell initiatives",
-                "Collaborating with marketing and design teams on outreach content"
-            ],
-            skills: ["Documentation", "Technical Writing", "Content Strategy", "E-Cell Operations"],
+            description: "Managing technical documentation, event reports, and publications for entrepreneurship initiatives.",
             gradient: "from-purple-500/20 to-indigo-500/20",
             icon: <FileText className="w-6 h-6 text-purple-400" />
         },
@@ -36,13 +24,7 @@ const Leadership = () => {
             role: "Technical Team Member",
             organization: "DevUp Society",
             badge: "Technical Community",
-            description: "Driving developer peer-learning, open-source discussions, coding bootcamps, and technical mentoring across collegiate developer cohorts.",
-            highlights: [
-                "Contributing to community coding bootcamps and workshops",
-                "Assisting junior developers with modern web fundamentals",
-                "Participating in collaborative team projects and code reviews"
-            ],
-            skills: ["Developer Community", "Problem Solving", "Collaboration", "Git & GitHub"],
+            description: "Driving peer-learning, hands-on coding sessions, and technical mentoring across student cohorts.",
             gradient: "from-emerald-500/20 to-cyan-500/20",
             icon: <Code2 className="w-6 h-6 text-emerald-400" />
         }
@@ -106,31 +88,9 @@ const Leadership = () => {
                                     {item.organization}
                                 </h4>
 
-                                <p className="text-xs text-text-muted leading-relaxed mb-5">
+                                <p className="text-xs md:text-sm text-text-muted leading-relaxed">
                                     {item.description}
                                 </p>
-
-                                <div className="space-y-2 mb-6">
-                                    {item.highlights.map((point, pIdx) => (
-                                        <div key={pIdx} className="flex items-start gap-2 text-[11px] text-text-muted">
-                                            <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-                                            <span>{point}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="relative z-10 pt-4 border-t border-white/5">
-                                <div className="flex flex-wrap gap-1.5">
-                                    {item.skills.map((skill, sIdx) => (
-                                        <span 
-                                            key={sIdx}
-                                            className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-text-muted group-hover:border-primary/20 transition-all"
-                                        >
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
                             </div>
                         </motion.div>
                     ))}
