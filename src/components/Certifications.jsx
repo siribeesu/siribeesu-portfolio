@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Sparkles, Star, Award, ShieldCheck, Trophy } from 'lucide-react';
 
@@ -11,12 +11,6 @@ const Certifications = () => {
             year: "2024 - 2028",
             scholarId: "RFSCH240900462787",
             badge: "Reliance Scholar",
-            description: "Awarded the highly competitive Reliance Foundation Undergraduate Scholarship recognizing exceptional academic merit, leadership qualities, and dedication to STEM excellence.",
-            points: [
-                "Scholar ID: RFSCH240900462787",
-                "Recipient through a competitive entrance examination",
-                "Recognized for outstanding academic performance & leadership"
-            ],
             borderColor: "border-amber-500/30 hover:border-amber-400/70",
             badgeColor: "text-amber-400 border-amber-500/30 bg-amber-500/10",
             iconColor: "text-amber-400 bg-amber-500/10 border-amber-500/20",
@@ -30,12 +24,6 @@ const Certifications = () => {
             year: "2024 - 2028",
             scholarId: null,
             badge: "Infosys Scholar",
-            description: "Awarded the prestigious Infosys Foundation Scholarship in recognition of academic distinction, engineering aptitude, and dedication to building scalable technology.",
-            points: [
-                "Awarded for national STEM excellence and engineering merit",
-                "Recognized by Infosys Foundation for academic distinction",
-                "Empowered to advance scalable software engineering and research"
-            ],
             borderColor: "border-primary/30 hover:border-primary/70",
             badgeColor: "text-primary border-primary/30 bg-primary/10",
             iconColor: "text-primary bg-primary/10 border-primary/20",
@@ -49,11 +37,9 @@ const Certifications = () => {
             year: "2021 - 2024",
             scholarId: null,
             badge: "Academic Topper",
-            description: "Consistent high-ranking performance throughout schooling and pre-university education with top state and institutional ranks.",
             points: [
                 "Secured State 4th Rank in Class 11 and was College Topper",
-                "School Topper in Class 10 (CGPA: 9.8 / 10.0)",
-                "Consistently ranked among top performers throughout academic career"
+                "School Topper in Class 10 (CGPA: 9.8 / 10.0)"
             ],
             borderColor: "border-cyan-500/30 hover:border-cyan-400/70",
             badgeColor: "text-cyan-400 border-cyan-500/30 bg-cyan-500/10",
@@ -133,18 +119,22 @@ const Certifications = () => {
                                     </div>
                                 )}
 
-                                <p className="text-xs md:text-sm text-text-muted leading-relaxed mb-6">
-                                    {item.description}
-                                </p>
+                                {item.description && (
+                                    <p className="text-xs md:text-sm text-text-muted leading-relaxed mb-6">
+                                        {item.description}
+                                    </p>
+                                )}
 
-                                <div className="space-y-2.5">
-                                    {item.points.map((point, idx) => (
-                                        <div key={idx} className="flex items-start gap-2.5 text-xs text-text-muted">
-                                            <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                                            <span>{point}</span>
-                                        </div>
-                                    ))}
-                                </div>
+                                {item.points && item.points.length > 0 && (
+                                    <div className="space-y-2.5">
+                                        {item.points.map((point, idx) => (
+                                            <div key={idx} className="flex items-start gap-2.5 text-xs text-text-muted">
+                                                <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                                                <span>{point}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
                         </motion.div>
                     ))}
