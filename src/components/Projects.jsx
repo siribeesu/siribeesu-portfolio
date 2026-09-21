@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Github, Activity, ShoppingCart, ExternalLink, Puzzle } from 'lucide-react';
+import { Github, Activity, ShoppingCart, ExternalLink, Puzzle, MapPin } from 'lucide-react';
 
 const ProjectCard = ({ project, i }) => {
     const x = useMotionValue(0);
@@ -120,13 +120,24 @@ const Projects = () => {
             status: "MERN Stack"
         },
         {
+            title: "Radius250",
+            desc: "Location-centric web application enabling radius-based local discovery, interactive geospatial search, real-time mapping, and responsive proximity exploration.",
+            tags: ["React.js", "Node.js", "FastAPI", "Geolocation API"],
+            github: "https://github.com/siribeesu/radius250",
+            demo: "https://github.com/siribeesu/radius250", 
+            image: null, 
+            gradient: "from-cyan-500/20 to-blue-500/20",
+            icon: <MapPin className="w-6 h-6" />,
+            status: "Web Application"
+        },
+        {
             title: "SkillMatch AI",
             desc: "Intelligent Chrome Extension that analyzes job descriptions in real-time to match vacancies with candidate skills using NLP and automated parsing.",
             tags: ["Manifest V3", "JavaScript", "NLP", "OpenAI"],
             github: "https://github.com/siribeesu/skillmatch-ai",
             demo: "https://github.com/siribeesu/skillmatch-ai", 
             image: null, 
-            gradient: "from-blue-500/20 to-indigo-500/20",
+            gradient: "from-purple-500/20 to-indigo-500/20",
             icon: <Puzzle className="w-6 h-6" />,
             status: "Chrome Extension"
         }
@@ -147,7 +158,7 @@ const Projects = () => {
                     <div className="w-24 h-1.5 bg-primary mx-auto rounded-full" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                     {projects.map((project, i) => (
                         <ProjectCard key={i} project={project} i={i} />
                     ))}
