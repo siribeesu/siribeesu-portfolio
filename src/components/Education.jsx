@@ -5,23 +5,26 @@ import { GraduationCap, School, BookOpen } from 'lucide-react';
 const Education = () => {
   const educationData = [
     {
-      title: "B.Tech",
-      institution: "Vidya Jyothi Institute of Technology",
-      score: "CGPA: 9.1 (Sem 1 & 2)",
+      title: "B.Tech in Computer Science & Engineering",
+      institution: "Vidya Jyothi Institute of Technology (VJIT)",
+      score: "CGPA: 9.1",
+      period: "2024 - 2028",
       icon: <GraduationCap className="w-6 h-6" />,
       delay: 0.1
     },
     {
-      title: "Intermediate (12th)",
-      institution: "Telangana Board of Intermediate Education",
-      score: "Percentage: 98.1%",
+      title: "Intermediate (12th - MPC)",
+      institution: "Narayana Junior College, Hyderabad",
+      score: "Score: 98.1%",
+      period: "2022 - 2024",
       icon: <School className="w-6 h-6" />,
       delay: 0.2
     },
     {
-      title: "SSC (10th)",
+      title: "Secondary School Certificate (SSC - 10th)",
       institution: "Sarojini Naidu Memorial High School",
       score: "CGPA: 9.8",
+      period: "2022",
       icon: <BookOpen className="w-6 h-6" />,
       delay: 0.3
     }
@@ -61,15 +64,21 @@ const Education = () => {
                   {item.icon}
                 </div>
                 
-                <h3 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 
-                <p className="text-text-muted mb-4 text-sm leading-relaxed px-4">
+                <p className="text-text-muted mb-2 text-sm leading-relaxed px-2">
                   {item.institution}
                 </p>
+
+                {item.period && (
+                  <p className="text-xs text-primary/80 font-semibold mb-4">
+                    {item.period}
+                  </p>
+                )}
                 
-                <div className="mt-auto inline-block py-2 px-6 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-lg shadow-[0_0_15px_rgba(139,92,246,0.2)]">
+                <div className="mt-auto inline-block py-2 px-6 rounded-full bg-primary/10 border border-primary/20 text-primary font-bold text-base shadow-[0_0_15px_rgba(139,92,246,0.2)]">
                   {item.score}
                 </div>
               </div>

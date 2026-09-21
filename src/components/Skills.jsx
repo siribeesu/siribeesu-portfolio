@@ -37,23 +37,23 @@ const SkillCategory = ({ cat, i }) => {
 const Skills = () => {
     const categories = [
         {
-            title: "Frontend",
-            skills: ["HTML5", "CSS3", "React.js", "JavaScript"],
+            title: "Languages",
+            skills: ["Python", "JavaScript", "C/C++", "HTML5", "CSS3", "SQL"],
             color: "from-blue-500 to-cyan-400"
         },
         {
-            title: "Backend",
-            skills: ["Node.js", "Express.js", "Python", "C/C++", "Firebase"],
+            title: "Frontend & UI",
+            skills: ["React.js", "Tailwind CSS", "Framer Motion", "Responsive Design", "UI/UX"],
             color: "from-purple-500 to-indigo-500"
         },
         {
-            title: "Database",
-            skills: ["MongoDB", "MySQL", "PostgreSQL"],
+            title: "Backend & DB",
+            skills: ["Node.js", "Express.js", "MongoDB", "MySQL", "PostgreSQL", "REST APIs", "Firebase"],
             color: "from-green-500 to-emerald-400"
         },
         {
-            title: "Tools",
-            skills: ["Git & GitHub", "VS Code", "MS Office"],
+            title: "AI & Tools",
+            skills: ["Prompt Engineering", "Git & GitHub", "VS Code", "Vercel", "Render", "MS Office"],
             color: "from-orange-500 to-red-400"
         }
     ];

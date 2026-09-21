@@ -46,9 +46,10 @@ const Hero = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
                         style={{ transform: "translateZ(100px)" }}
-                        className="glass px-6 py-2 rounded-full text-primary font-bold uppercase tracking-[4px] mb-8 text-sm"
+                        className="glass px-6 py-2 rounded-full text-primary font-bold uppercase tracking-[3px] mb-8 text-xs md:text-sm flex items-center gap-2"
                     >
-                        Welcome to my universe
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                        Full Stack Developer • Infosys Foundation Scholar
                     </motion.div>
 
                     <motion.h1 
@@ -56,7 +57,7 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
                         style={{ transform: "translateZ(80px)" }}
-                        className="text-6xl md:text-8xl font-bold leading-[1.1] mb-8"
+                        className="text-6xl md:text-8xl font-bold leading-[1.1] mb-6"
                     >
                         Siri Beesu<span className="text-secondary">.</span>
                     </motion.h1>
@@ -66,9 +67,9 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                         style={{ transform: "translateZ(60px)" }}
-                        className="text-2xl md:text-4xl text-text-muted mb-8 font-light tracking-tight"
+                        className="text-2xl md:text-4xl text-text-muted mb-6 font-light tracking-tight"
                     >
-                        Full-Stack Developer & <span className="text-white font-medium">Digital Innovator</span>
+                        Full-Stack Developer & <span className="text-white font-medium">Software Engineer</span>
                     </motion.h2>
 
                     <motion.p 
@@ -76,11 +77,28 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
                         style={{ transform: "translateZ(40px)" }}
-                        className="text-lg md:text-xl text-text-muted max-w-3xl mb-12 leading-relaxed"
+                        className="text-lg md:text-xl text-text-muted max-w-3xl mb-8 leading-relaxed italic"
                     >
-                        Architecting scalable, user-centric web ecosystems with the MERN stack. 
-                        Solving real-world challenges through clean code and modern engineering.
+                        "Turning ideas into real products."
                     </motion.p>
+
+                    {/* Banner Focus Tags */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
+                        style={{ transform: "translateZ(30px)" }}
+                        className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-3xl mb-12"
+                    >
+                        {["Full Stack Development", "Scalable Systems", "Prompt Engineering", "Creative UI/UX", "Clean Code"].map((tag, idx) => (
+                            <span 
+                                key={idx}
+                                className="px-3.5 py-1.5 glass rounded-full text-xs font-semibold text-text-muted border border-white/10 hover:border-primary/50 hover:text-white transition-all"
+                            >
+                                {tag}
+                            </span>
+                        ))}
+                    </motion.div>
                     
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
@@ -93,13 +111,12 @@ const Hero = () => {
                             View Projects <ArrowRight size={20} />
                         </a>
                         <a 
-                            href="https://github.com/siribeesu" 
+                            href="https://linkedin.com/in/siri-beesu-96a6b730a" 
                             target="_blank" 
                             rel="noreferrer"
                             className="glass px-10 py-4 rounded-2xl font-bold hover:bg-white/10 active:scale-95 transition-all flex items-center gap-3"
                         >
-                            <Github size={22} />
-                            GitHub Profile
+                            Connect on LinkedIn
                         </a>
                     </motion.div>
                 </motion.div>
