@@ -6,25 +6,25 @@ const Education = () => {
   const educationData = [
     {
       title: "B.Tech in Computer Science & Engineering",
-      institution: "Vidya Jyothi Institute of Technology (VJIT)",
-      score: "CGPA: 9.1",
+      institution: "Vidya Jyothi Institute of Technology",
+      score: "CGPA: 9.1 (Sem 1 & 2)",
       period: "2024 - 2028",
       icon: <GraduationCap className="w-6 h-6" />,
       delay: 0.1
     },
     {
-      title: "Intermediate (12th - MPC)",
-      institution: "Narayana Junior College, Hyderabad",
+      title: "Intermediate (12th)",
+      institution: "Telangana Board of Intermediate Education",
       score: "Score: 98.1%",
       period: "2022 - 2024",
       icon: <School className="w-6 h-6" />,
       delay: 0.2
     },
     {
-      title: "Secondary School Certificate (SSC - 10th)",
+      title: "SSC (10th)",
       institution: "Sarojini Naidu Memorial High School",
       score: "CGPA: 9.8",
-      period: "2022",
+      period: "2021 - 2022",
       icon: <BookOpen className="w-6 h-6" />,
       delay: 0.3
     }

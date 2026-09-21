@@ -1,22 +1,36 @@
-﻿import React from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Building2, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
 
 const Experience = () => {
     const experiences = [
         {
+            role: "Full-Stack Development Intern",
+            company: "PSS Automate Private Limited",
+            type: "3 Months Internship",
+            description: "Developed production features using WebSockets, FastAPI (Python), Next.js, Docker, and MCP (Model Context Protocol).",
+            highlights: [
+                "Built backend APIs with FastAPI and real-time features with WebSockets",
+                "Engineered responsive Next.js frontend interfaces",
+                "Containerized applications using Docker and integrated MCP workflows"
+            ],
+            skills: ["Next.js", "FastAPI (Python)", "WebSockets", "Docker", "MCP"],
+            gradient: "from-blue-500/20 to-cyan-500/20",
+            icon: <Briefcase className="w-6 h-6 text-cyan-400" />
+        },
+        {
             role: "Full Stack Developer Intern",
             company: "Startups India",
             type: "Internship",
-            description: "Developed and scaled end-to-end full stack web applications. Built modular frontend components, optimized data fetching, and engineered robust RESTful backend endpoints.",
+            description: "Developed and scaled full-stack web features, optimized frontend performance, and designed RESTful backend API integrations.",
             highlights: [
-                "Full-stack feature engineering & API integrations",
+                "Full-stack feature engineering & REST API integrations",
                 "Frontend state management and responsive UI components",
                 "Performance optimization and cross-platform compatibility"
             ],
             skills: ["React.js", "Node.js", "REST APIs", "Express.js", "MongoDB"],
-            gradient: "from-blue-500/20 to-cyan-500/20",
-            icon: <Building2 className="w-6 h-6 text-cyan-400" />
+            gradient: "from-purple-500/20 to-pink-500/20",
+            icon: <Building2 className="w-6 h-6 text-secondary" />
         },
         {
             role: "Full Stack Developer Intern",
@@ -29,22 +43,8 @@ const Experience = () => {
                 "Collaborated in sprint planning and code reviews"
             ],
             skills: ["Full Stack Dev", "JavaScript", "React.js", "MongoDB", "Express.js"],
-            gradient: "from-purple-500/20 to-pink-500/20",
-            icon: <Code2 className="w-6 h-6 text-secondary" />
-        },
-        {
-            role: "Full Stack Developer Intern",
-            company: "PSS Automate Private Limited",
-            type: "Internship",
-            description: "Built scalable web tools and software automation solutions. Developed responsive client portals and integrated dynamic database workflows.",
-            highlights: [
-                "Engineered scalable web solutions and automated workflows",
-                "Crafted intuitive user interfaces and backend logic",
-                "Maintained clean documentation and version control workflows"
-            ],
-            skills: ["Full Stack Engineering", "Python", "Web Automation", "REST APIs"],
             gradient: "from-emerald-500/20 to-teal-500/20",
-            icon: <Briefcase className="w-6 h-6 text-emerald-400" />
+            icon: <Code2 className="w-6 h-6 text-emerald-400" />
         }
     ];
 

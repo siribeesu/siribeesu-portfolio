@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { motion } from 'framer-motion';
-import { Users, FileText, Code2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Users, FileText, Code2, Sparkles, CheckCircle2, Trophy } from 'lucide-react';
 
 const Leadership = () => {
     const roles = [
@@ -45,6 +45,20 @@ const Leadership = () => {
             skills: ["Developer Community", "Problem Solving", "Collaboration", "Git & GitHub"],
             gradient: "from-emerald-500/20 to-cyan-500/20",
             icon: <Code2 className="w-6 h-6 text-emerald-400" />
+        },
+        {
+            role: "Hackathon Competitor & Builder",
+            organization: "Smart India Hackathon (SIH) & CSI Hackathon",
+            badge: "Hackathons",
+            description: "Participating in premier national hackathons, architecting full-stack solutions for real-world problem statements under rapid team sprint settings.",
+            highlights: [
+                "Contributed to problem analysis, system architecture, and frontend-backend integration",
+                "Collaborated on real-world problem statements in team settings",
+                "Built and deployed end-to-end full stack prototypes"
+            ],
+            skills: ["Smart India Hackathon", "CSI Hackathon", "System Architecture", "Prototyping"],
+            gradient: "from-cyan-500/20 to-blue-500/20",
+            icon: <Trophy className="w-6 h-6 text-cyan-400" />
         }
     ];
 
@@ -61,7 +75,7 @@ const Leadership = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent inline-block"
                     >
-                        Leadership & Community
+                        Leadership & Hackathons
                     </motion.h2>
                     <motion.div 
                         initial={{ width: 0 }}
@@ -70,49 +84,49 @@ const Leadership = () => {
                         className="h-1.5 bg-primary mx-auto rounded-full mb-4"
                     />
                     <p className="text-text-muted max-w-xl mx-auto text-sm md:text-base">
-                        Active contributions to technical communities, entrepreneurship cells, and developer societies.
+                        Active contributions to technical communities, entrepreneurship cells, and national hackathons.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                     {roles.map((item, index) => (
                         <motion.div
                             key={index}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.15 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             whileHover={{ y: -8 }}
-                            className="glass p-8 rounded-3xl border border-white/5 hover:border-primary/40 transition-all flex flex-col justify-between group relative overflow-hidden"
+                            className="glass p-7 rounded-3xl border border-white/5 hover:border-primary/40 transition-all flex flex-col justify-between group relative overflow-hidden"
                         >
                             {/* Ambient Top Glow */}
                             <div className={`absolute top-0 right-0 w-36 h-36 bg-gradient-to-br ${item.gradient} rounded-full blur-2xl group-hover:scale-125 transition-all duration-500`} />
 
                             <div className="relative z-10">
-                                <div className="flex items-center justify-between mb-6">
-                                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div className="flex items-center justify-between mb-5">
+                                    <div className="w-13 h-13 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                                         {item.icon}
                                     </div>
-                                    <span className="px-3.5 py-1 bg-primary/10 border border-primary/20 rounded-full text-xs font-bold uppercase tracking-wider text-primary">
+                                    <span className="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full text-[10px] font-bold uppercase tracking-wider text-primary">
                                         {item.badge}
                                     </span>
                                 </div>
 
-                                <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-primary transition-colors mb-1">
+                                <h3 className="text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors mb-1">
                                     {item.role}
                                 </h3>
 
-                                <h4 className="text-base font-semibold text-secondary mb-4">
+                                <h4 className="text-xs font-semibold text-secondary mb-4">
                                     {item.organization}
                                 </h4>
 
-                                <p className="text-sm text-text-muted leading-relaxed mb-6">
+                                <p className="text-xs text-text-muted leading-relaxed mb-5">
                                     {item.description}
                                 </p>
 
                                 <div className="space-y-2 mb-6">
                                     {item.highlights.map((point, pIdx) => (
-                                        <div key={pIdx} className="flex items-start gap-2 text-xs text-text-muted">
+                                        <div key={pIdx} className="flex items-start gap-2 text-[11px] text-text-muted">
                                             <CheckCircle2 className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
                                             <span>{point}</span>
                                         </div>
@@ -121,11 +135,11 @@ const Leadership = () => {
                             </div>
 
                             <div className="relative z-10 pt-4 border-t border-white/5">
-                                <div className="flex flex-wrap gap-2">
+                                <div className="flex flex-wrap gap-1.5">
                                     {item.skills.map((skill, sIdx) => (
                                         <span 
                                             key={sIdx}
-                                            className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-lg text-xs font-medium text-text-muted group-hover:border-primary/20 transition-all"
+                                            className="px-2 py-0.5 bg-white/5 border border-white/10 rounded-lg text-[10px] font-medium text-text-muted group-hover:border-primary/20 transition-all"
                                         >
                                             {skill}
                                         </span>

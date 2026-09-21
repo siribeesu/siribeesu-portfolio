@@ -37,24 +37,29 @@ const SkillCategory = ({ cat, i }) => {
 const Skills = () => {
     const categories = [
         {
-            title: "Languages",
-            skills: ["Python", "JavaScript", "C/C++", "HTML5", "CSS3", "SQL"],
+            title: "Programming Languages",
+            skills: ["Python", "C", "C++", "JavaScript"],
             color: "from-blue-500 to-cyan-400"
         },
         {
-            title: "Frontend & UI",
-            skills: ["React.js", "Tailwind CSS", "Framer Motion", "Responsive Design", "UI/UX"],
-            color: "from-purple-500 to-indigo-500"
+            title: "Frontend Development",
+            skills: ["HTML5", "CSS3", "React.js", "Next.js", "Tailwind CSS"],
+            color: "from-purple-500 to-pink-500"
         },
         {
-            title: "Backend & DB",
-            skills: ["Node.js", "Express.js", "MongoDB", "MySQL", "PostgreSQL", "REST APIs", "Firebase"],
-            color: "from-green-500 to-emerald-400"
+            title: "Backend & Realtime",
+            skills: ["Node.js", "Express.js", "Python FastAPI", "WebSockets"],
+            color: "from-emerald-500 to-teal-400"
         },
         {
-            title: "AI & Tools",
-            skills: ["Prompt Engineering", "Git & GitHub", "VS Code", "Vercel", "Render", "MS Office"],
-            color: "from-orange-500 to-red-400"
+            title: "Databases",
+            skills: ["MySQL", "MongoDB", "Firebase"],
+            color: "from-indigo-500 to-blue-500"
+        },
+        {
+            title: "Tools & Technologies",
+            skills: ["Docker", "VS Code", "Git & GitHub", "MCP", "MS Office"],
+            color: "from-orange-500 to-amber-400"
         }
     ];
 
@@ -66,7 +71,7 @@ const Skills = () => {
                     <div className="w-20 h-1.5 bg-primary mx-auto rounded-full" />
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
                     {categories.map((cat, i) => (
                         <SkillCategory key={i} cat={cat} i={i} />
                     ))}
